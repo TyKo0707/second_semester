@@ -49,8 +49,8 @@ def check_b(matrix, algo: str):
 
 if __name__ == "__main__":
     arr_num = [10, 100, 1000, 5000, 10000, 20000, 50000]
-    square = [i ** 2 for i in arr_num]
-    log_f = [i * math.log2(i) for i in arr_num]
+    square = [i**2 for i in arr_num]
+    log_f = [i*math.log2(i) for i in arr_num]
     res_bubble = [[], [], []]
     res_comb = [[], [], []]
     res_bubble_p = [[], [], []]
@@ -109,28 +109,24 @@ if __name__ == "__main__":
     plt.xlabel('Number of elements in array')
     plt.ylabel('Time to sort')
     plt.legend(['Best case', 'Worst case', 'Random case'])
-    plt.xticks(arr_num)
     ax2 = plt.subplot(2, 2, 2)
     plt.plot(arr_num, res_comb[0], '-', arr_num, res_comb[1], '-', arr_num, res_comb[2], '-')
     plt.title('Comb sort time')
     plt.xlabel('Number of elements in array')
     plt.ylabel('Time to sort')
     plt.legend(['Best case', 'Worst case', 'Random case'])
-    plt.xticks(arr_num)
     ax3 = plt.subplot(2, 2, 3)
     plt.plot(arr_num, res_bubble_p[0], '-', arr_num, res_bubble_p[1], '-', arr_num, res_bubble_p[2], '-')
     plt.plot(arr_num, square, '-', alpha=0.5)
     plt.title('Bubble sort performance')
     plt.xlabel('Number of elements in array')
     plt.ylabel('Number of comparisons')
-    plt.legend(['Best case', 'Worst case', 'Random case'])
-    plt.xticks(arr_num)
+    plt.legend(['Best case', 'Worst case', 'Random case', 'Square function'])
     ax4 = plt.subplot(2, 2, 4)
     plt.plot(arr_num, res_comb_p[0], '-', arr_num, res_comb_p[1], '-', arr_num, res_comb_p[2], '-')
     plt.plot(arr_num, log_f, '-', alpha=0.5)
     plt.title('Comb sort performance')
     plt.xlabel('Number of elements in array')
     plt.ylabel('Number of comparisons')
-    plt.legend(['Best case', 'Worst case', 'Random case'])
-    plt.xticks(arr_num)
+    plt.legend(['Best case', 'Worst case', 'Random case', 'Logarithmic function'])
     plt.show()
