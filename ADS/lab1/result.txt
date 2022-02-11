@@ -1,0 +1,225 @@
+Array with 10 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]...
+	Norm array: [4, 3, 8, 6, 9, 1, 7, 2, 10, 5]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 9, 0
+		Time for bubble sort(best): 5.900000000114147e-06 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 45, 45
+		Time for bubble sort(worst): 1.4500000000028379e-05 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 42, 20
+		Time for bubble sort(normal): 8.699999999972619e-06 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 36, 0
+		Time for bubble sort(best): 8.899999999867347e-06 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 45, 9
+		Time for bubble sort(worst): 8.999999999925734e-06 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 45, 14
+		Time for bubble sort(normal): 9.000000000147779e-06 s
+
+Array with 50 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [50, 49, 48, 47, 46, 45, 44, 43, 42, 41]...
+	Norm array: [23, 3, 1, 21, 27, 40, 19, 38, 47, 13]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 49, 0
+		Time for bubble sort(best): 6.100000000008876e-06 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 1225, 1225
+		Time for bubble sort(worst): 0.00028349999999988107 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 1215, 563
+		Time for bubble sort(normal): 0.00019849999999999035 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 474, 0
+		Time for bubble sort(best): 5.2399999999952485e-05 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 523, 45
+		Time for bubble sort(worst): 6.330000000009939e-05 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 523, 99
+		Time for bubble sort(normal): 6.810000000001537e-05 s
+
+Array with 100 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [100, 99, 98, 97, 96, 95, 94, 93, 92, 91]...
+	Norm array: [21, 14, 1, 83, 11, 10, 20, 85, 5, 93]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 99, 0
+		Time for bubble sort(best): 1.1399999999994748e-05 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 4950, 4950
+		Time for bubble sort(worst): 0.0012356000000000034 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 4914, 2380
+		Time for bubble sort(normal): 0.0007918999999998455 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 1229, 0
+		Time for bubble sort(best): 0.00011730000000009788 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 1328, 110
+		Time for bubble sort(worst): 0.00014139999999995823 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 1328, 224
+		Time for bubble sort(normal): 0.00015650000000011488 s
+
+Array with 200 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [200, 199, 198, 197, 196, 195, 194, 193, 192, 191]...
+	Norm array: [40, 53, 144, 67, 120, 162, 24, 64, 179, 122]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 199, 0
+		Time for bubble sort(best): 1.8499999999921357e-05 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 19900, 19900
+		Time for bubble sort(worst): 0.004836599999999969 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 19624, 9795
+		Time for bubble sort(normal): 0.003166199999999897 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 3038, 0
+		Time for bubble sort(best): 0.00028450000000002085 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 3237, 238
+		Time for bubble sort(worst): 0.0003349999999999742 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 3237, 597
+		Time for bubble sort(normal): 0.0003914000000000417 s
+
+Array with 300 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [300, 299, 298, 297, 296, 295, 294, 293, 292, 291]...
+	Norm array: [223, 161, 249, 152, 205, 42, 171, 254, 129, 291]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 299, 0
+		Time for bubble sort(best): 2.880000000016203e-05 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 44850, 44850
+		Time for bubble sort(worst): 0.011250800000000005 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 44289, 21956
+		Time for bubble sort(normal): 0.008411900000000028 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 5141, 0
+		Time for bubble sort(best): 0.0008068999999999438 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 5440, 392
+		Time for bubble sort(worst): 0.0007291999999998744 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 5440, 960
+		Time for bubble sort(normal): 0.0006857000000000113 s
+
+Array with 400 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [400, 399, 398, 397, 396, 395, 394, 393, 392, 391]...
+	Norm array: [202, 195, 289, 117, 101, 9, 266, 67, 270, 304]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 399, 0
+		Time for bubble sort(best): 4.080000000006301e-05 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 79800, 79800
+		Time for bubble sort(worst): 0.02023510000000006 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 79365, 38032
+		Time for bubble sort(normal): 0.014299799999999863 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 7235, 0
+		Time for bubble sort(best): 0.0007089000000000123 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 7634, 540
+		Time for bubble sort(worst): 0.000830700000000073 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 7634, 1382
+		Time for bubble sort(normal): 0.0011280000000000179 s
+
+Array with 500 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [500, 499, 498, 497, 496, 495, 494, 493, 492, 491]...
+	Norm array: [58, 247, 79, 402, 198, 49, 172, 95, 302, 378]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 499, 0
+		Time for bubble sort(best): 6.170000000005338e-05 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 124750, 124750
+		Time for bubble sort(worst): 0.03151829999999989 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 123760, 60244
+		Time for bubble sort(normal): 0.022392699999999932 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 9535, 0
+		Time for bubble sort(best): 0.0009748000000000534 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 10034, 708
+		Time for bubble sort(worst): 0.0011176999999999992 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 10533, 1854
+		Time for bubble sort(normal): 0.0013741000000000447 s
+
+Array with 750 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [750, 749, 748, 747, 746, 745, 744, 743, 742, 741]...
+	Norm array: [399, 438, 250, 314, 55, 316, 646, 418, 421, 444]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 749, 0
+		Time for bubble sort(best): 8.380000000007826e-05 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 280875, 280875
+		Time for bubble sort(worst): 0.0690769 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 280599, 141527
+		Time for bubble sort(normal): 0.05017129999999992 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 15779, 0
+		Time for bubble sort(best): 0.0015674000000001076 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 16528, 1085
+		Time for bubble sort(worst): 0.001835500000000101 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 16528, 2975
+		Time for bubble sort(normal): 0.0033214999999999772 s
+
+Array with 1000 numbers:
+	Best array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]...
+	Worst array: [1000, 999, 998, 997, 996, 995, 994, 993, 992, 991]...
+	Norm array: [548, 871, 382, 528, 351, 1, 815, 346, 989, 468]...
+
+	Bubble:
+		Number of comparisons, number of swaps in bubble sort(best): 999, 0
+		Time for bubble sort(best): 0.0001049000000001854 s
+
+		Number of comparisons, number of swaps in bubble sort(worst): 499500, 499500
+		Time for bubble sort(worst): 0.12783560000000005 s
+
+		Number of comparisons, number of swaps in bubble sort(norm): 498905, 245081
+		Time for bubble sort(normal): 0.09253090000000008 s
+
+	Comb:
+		Number of comparisons, number of swaps in comb sort(best): 22022, 0
+		Time for bubble sort(best): 0.0024220999999999826 s
+
+		Number of comparisons, number of swaps in comb sort(worst): 23021, 1512
+		Time for bubble sort(worst): 0.003031600000000134 s
+
+		Number of comparisons, number of swaps in comb sort(norm): 23021, 4367
+		Time for bubble sort(normal): 0.003438199999999947 s
+
