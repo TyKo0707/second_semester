@@ -47,10 +47,18 @@ def check_b(matrix, algo: str):
     return tuple(res)
 
 
+def create_plot(xdata, ydata, title, xlabel, ylabel, legend, subplace):
+    ax = plt.subplot(subplace[0], subplace[1], subplace[2])
+    plt.plot(xdata, ydata[0], '-', xdata, ydata[1], '-', xdata, ydata[2], '-')
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.legend(legend)
+    return ax
+
+
 if __name__ == "__main__":
-    arr_num = [10, 100, 1000, 5000, 10000, 20000, 50000]
-    square = [i**2 for i in arr_num]
-    log_f = [i*math.log2(i) for i in arr_num]
+    arr_num = [10, 100, 250, 500, 750, 1000, 2500, 5000]
     res_bubble = [[], [], []]
     res_comb = [[], [], []]
     res_bubble_p = [[], [], []]
@@ -67,9 +75,9 @@ if __name__ == "__main__":
             res_bubble[0].append(bubble_best)
             res_bubble[1].append(bubble_worst)
             res_bubble[2].append(bubble_norm)
-            res_bubble_p[0].append(bubble_best_comp)
-            res_bubble_p[1].append(bubble_worst_comp)
-            res_bubble_p[2].append(bubble_norm_comp)
+            res_bubble_p[0].append(bubble_best_swap)
+            res_bubble_p[1].append(bubble_worst_swap)
+            res_bubble_p[2].append(bubble_norm_swap)
             title = f'Array with {arr_num[i]} numbers:\n' \
                     f'\tBest array: {best[:10]}...\n' \
                     f'\tWorst array: {worst[:10]}...\n' \
@@ -87,9 +95,9 @@ if __name__ == "__main__":
             res_comb[0].append(comb_best)
             res_comb[1].append(comb_worst)
             res_comb[2].append(comb_norm)
-            res_comb_p[0].append(comb_best_comp)
-            res_comb_p[1].append(comb_worst_comp)
-            res_comb_p[2].append(comb_norm_comp)
+            res_comb_p[0].append(comb_best_swap)
+            res_comb_p[1].append(comb_worst_swap)
+            res_comb_p[2].append(comb_norm_swap)
             stw_comb = f'\n\n\tComb:\n' \
                        f'\t\tNumber of comparisons, number of swaps in comb sort(best): {comb_best_comp}, {comb_best_swap}\n' \
                        f'\t\tTime for bubble sort(best): {comb_best} s\n' \
@@ -103,30 +111,12 @@ if __name__ == "__main__":
             file.write(stw_comb)
 
     plt.figure()
-    ax1 = plt.subplot(2, 2, 1)
-    plt.plot(arr_num, res_bubble[0], '-', arr_num, res_bubble[1], '-', arr_num, res_bubble[2], '-')
-    plt.title('Bubble sort time')
-    plt.xlabel('Number of elements in array')
-    plt.ylabel('Time to sort')
-    plt.legend(['Best case', 'Worst case', 'Random case'])
-    ax2 = plt.subplot(2, 2, 2)
-    plt.plot(arr_num, res_comb[0], '-', arr_num, res_comb[1], '-', arr_num, res_comb[2], '-')
-    plt.title('Comb sort time')
-    plt.xlabel('Number of elements in array')
-    plt.ylabel('Time to sort')
-    plt.legend(['Best case', 'Worst case', 'Random case'])
-    ax3 = plt.subplot(2, 2, 3)
-    plt.plot(arr_num, res_bubble_p[0], '-', arr_num, res_bubble_p[1], '-', arr_num, res_bubble_p[2], '-')
-    plt.plot(arr_num, square, '-', alpha=0.5)
-    plt.title('Bubble sort performance')
-    plt.xlabel('Number of elements in array')
-    plt.ylabel('Number of comparisons')
-    plt.legend(['Best case', 'Worst case', 'Random case', 'Square function'])
-    ax4 = plt.subplot(2, 2, 4)
-    plt.plot(arr_num, res_comb_p[0], '-', arr_num, res_comb_p[1], '-', arr_num, res_comb_p[2], '-')
-    plt.plot(arr_num, log_f, '-', alpha=0.5)
-    plt.title('Comb sort performance')
-    plt.xlabel('Number of elements in array')
-    plt.ylabel('Number of comparisons')
-    plt.legend(['Best case', 'Worst case', 'Random case', 'Logarithmic function'])
+    ax1 = create_plot(arr_num, res_bubble, 'Bubble sort time', 'Number of elements in array', 'Time to sort',
+                      ['Best case', 'Worst case', 'Random case'], [2, 2, 1])
+    ax2 = create_plot(arr_num, res_comb, 'Comb sort time', 'Number of elements in array', 'Time to sort',
+                      ['Best case', 'Worst case', 'Random case'], [2, 2, 2])
+    ax3 = create_plot(arr_num, res_bubble_p, 'Bubble sort performance', 'Number of elements in array', 'Number of swaps',
+                      ['Best case', 'Worst case', 'Random case'], [2, 2, 3])
+    ax4 = create_plot(arr_num, res_comb_p, 'Comb sort performance', 'Number of elements in array', 'Number of swaps',
+                      ['Best case', 'Worst case', 'Random case'], [2, 2, 4])
     plt.show()
