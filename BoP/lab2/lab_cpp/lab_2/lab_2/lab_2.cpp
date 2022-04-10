@@ -17,4 +17,5 @@ int main() {
 
 	cout << "\nResult of changing in file is: " << endl;
 	show_res(second_f, num_of_calls);
+	cout << num_of_calls << endl;
 }

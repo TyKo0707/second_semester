@@ -51,9 +51,9 @@ void delete_cols(const string& file_name_1, const string& file_name_2, int& num_
     ofstream file2(file_name_2, ios::binary);
     vector<cl> cls;
     cl c;
-    int count = 0;
+    int count = 0, iter = num_of_calls;
 
-    for (int i = 0; i < num_of_calls; i++)
+    for (int i = 0; i < iter; i++)
     {
         file.read((char*)&c, sizeof(cl));
         count++;

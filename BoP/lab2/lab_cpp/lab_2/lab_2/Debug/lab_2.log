@@ -1,1 +1,3 @@
-﻿  lab_2.vcxproj -> C:\Users\38097\Desktop\Second semester\BoP\lab2\lab_cpp\lab_2\Debug\lab_2.exe
+﻿  Source.cpp
+C:\Users\38097\Desktop\Second semester\BoP\lab2\lab_cpp\lab_2\lab_2\Source.cpp(78,23): warning C4018: '<': signed/unsigned mismatch
+  lab_2.vcxproj -> C:\Users\38097\Desktop\Second semester\BoP\lab2\lab_cpp\lab_2\Debug\lab_2.exe
