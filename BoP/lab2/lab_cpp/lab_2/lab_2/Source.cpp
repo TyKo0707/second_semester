@@ -7,20 +7,21 @@
 using namespace std;
 
 struct cl {
-    string tel_number, start_time, end_time;
+    char tel_number[10], start_time[6], end_time[6];
     double price;
 };
 
-void show_res(string file_name) {
+void show_res(const string& file_name, int num_of_calls) {
     cl c;
     ifstream file(file_name, ios::binary);
-    while (file.read((char*)&c, sizeof(cl))) {
+    for (int i = 0; i < num_of_calls; i++)
+    {
+        file.read((char*)&c, sizeof(cl));
         cout << "\nPhone number: +380" << c.tel_number << endl;
         cout << "Call started: " << c.start_time << endl;
         cout << "Call ended: " << c.end_time << endl;
         cout << "Price of call: " << c.price << endl;
-    }
-    file.close();
+    }    
 }
 
 double price_for_call(string start_time, string end_time) {
@@ -44,7 +45,7 @@ double price_for_call(string start_time, string end_time) {
     }
 }
 
-void delete_cols(string file_name_1, string file_name_2) {
+void delete_cols(const string& file_name_1, const string& file_name_2, int& num_of_calls) {
 
     ifstream file(file_name_1, ios::binary);
     ofstream file2(file_name_2, ios::binary);
@@ -52,19 +53,26 @@ void delete_cols(string file_name_1, string file_name_2) {
     cl c;
     int count = 0;
 
-    while (file.read((char*)&c, sizeof(cl))) {
+    for (int i = 0; i < num_of_calls; i++)
+    {
+        file.read((char*)&c, sizeof(cl));
         count++;
         int hours_s, mins_s, hours_e, mins_e;
         char extra;
+        string st(c.start_time, 5), et(c.end_time, 5);
 
         std::stringstream ss_start, ss_end;
-        ss_start << c.start_time;
+        ss_start << st;
         ss_start >> hours_s >> extra >> mins_s >> extra;
-        ss_end << c.end_time;
+        ss_end << et;
         ss_end >> hours_e >> extra >> mins_e >> extra;
         double diff = (hours_e * 60 + mins_e) - (hours_s * 60 + mins_s);
         if (diff <= 3) {
-            cls.erase(cls.begin() + count);
+            num_of_calls--;
+            continue;            
+        }
+        else {
+            cls.push_back(c);
         }
     }
     for (int i = 0; i < cls.size(); i++)
@@ -72,37 +80,36 @@ void delete_cols(string file_name_1, string file_name_2) {
         c = cls[i];
         file2.write((char*)&c, sizeof(cl));
     }
-    file.close();
-    file2.close();
 }
 
-void create_list(string file_name) {
+void create_list(string file_name, int& num_of_calls) {
 
     vector<cl> calls;
     ofstream file(file_name, ios::binary);
     string buf = "y";
-    int count = 0;
     bool is_ok = true;
 
     while (buf == "y") {
         is_ok = true;
-        count++;
-        cl c;
-        cout << "Client " << count << endl;
+        num_of_calls++;
+        cl c;        
+        cout << "Client " << num_of_calls << endl;
         cout << "Telephone number +380";
         cin >> c.tel_number;
         cin.ignore();
-        cout << "Start time (HH:MM): ";
+        cout << "Start time (HH:MM): ";        
         cin >> c.start_time;
         cin.ignore();
         cout << "End time (HH:MM): ";
         cin >> c.end_time;
         cin.ignore();
-        c.price = price_for_call(c.start_time, c.end_time);
+        string st(c.start_time, 5), et(c.end_time, 5);
+        c.price = price_for_call(st, et);
 
         if (c.price < 0) {
             cout << "Mismatch in time!" << endl;
             is_ok = false;
+            num_of_calls--;
         }
         if (is_ok) {
             file.write((char*)&c, sizeof(cl));
