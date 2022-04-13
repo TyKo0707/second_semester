@@ -24,7 +24,7 @@ def create_file(file_name: str, text=None, enc='utf-8'):
             new_file = open(file_name, 'a', encoding=enc)
             new_file.write('\n' + text[0])
             flag = False
-        if choice == 'r':
+        elif choice == 'r':
             new_file = open(file_name, 'w', encoding=enc)
             new_file.write(text[0])
             flag = False

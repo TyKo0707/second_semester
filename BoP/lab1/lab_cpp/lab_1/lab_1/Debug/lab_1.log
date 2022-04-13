@@ -1,9 +1,11 @@
 ﻿  Source.cpp
-C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(54,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(57,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(99,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(121,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(125,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(55,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(58,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(67,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(102,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(106,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(128,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\lab_1\Source.cpp(132,21): warning C4018: '<': signed/unsigned mismatch
+  lab_1.cpp
+  Generating Code...
   lab_1.vcxproj -> C:\Users\38097\Desktop\Second semester\BoP\lab1\lab_cpp\lab_1\Debug\lab_1.exe

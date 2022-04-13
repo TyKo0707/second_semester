@@ -7,10 +7,15 @@
 
 using namespace std;
 
-ofstream createFile(string file_name) {
+ofstream createFile(string file_name, string file_mode) {
 
 	ofstream file;
-	file.open(file_name, ios::out | ios::trunc);
+	if (file_mode == "r") {
+		file.open(file_name);
+	}
+	else if (file_mode == "a") {
+		file.open(file_name, ios::app);
+	}
 
 	if (!file.is_open()) {
 		cout << "File isn't created" << endl;
@@ -21,35 +26,31 @@ ofstream createFile(string file_name) {
 	return file;
 }
 
-void fillFile(string file_name, vector<string> inputText) {
+void fillFile(string file_name, string file_mode) {
 
 	ofstream file;
-	file.open(file_name);
+	if (file_mode == "r") {
+		file.open(file_name);
+	}
+	else if (file_mode == "a") {
+		file.open(file_name, ios::app);
+	}
+	string str;
 
-	for (int i = 0; i < inputText.size(); i++)
-	{
-		file << inputText[i];
+	cout << "Input text for " + file_name + ": " << endl;
+	while (getline(cin, str)) {
+		file << str;
 		file << "\n";
 	}
 
 	file.close();
 }
 
-vector<string> inputText(string file_name) {
-
-	vector<string> input;
-	string str;
-
-	cout << "Input text for " + file_name + ": " << endl;	
-	while (getline(cin, str)) {
-		input.push_back(str);
-	}
-
-	return input;
-}
-
-vector<string> createText(vector<vector<string>> splitedText, vector<string> minWords, vector<int> minLength) {
+vector<string> createText(vector<vector<string>> splitedText, vector<string> minWords, vector<int> minLength, string file_name) {
+	
 	vector<string> text;
+	ofstream file;
+	file.open(file_name);
 
 	for (int i = 0; i < splitedText.size() - 1; i++)
 	{
@@ -61,6 +62,12 @@ vector<string> createText(vector<vector<string>> splitedText, vector<string> min
 		str += "(" + minWords[i] + "-";
 		str += to_string(minLength[i]) + ")";
 		text.push_back(str);
+	}
+
+	for (int i = 0; i < text.size(); i++)
+	{
+		file << text[i];
+		file << "\n";
 	}
 	return text;
 }
@@ -141,7 +148,7 @@ void outputFile(string file_name) {
 	file.open(file_name);
 	
 	while (getline(file, str)) {		
-		cout << str << endl;;
+		cout << str << endl;
 	}
 
 	file.close();
