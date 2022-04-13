@@ -11,10 +11,20 @@ struct cl {
     double price;
 };
 
+int num_of_structs(const string& file_name) {
+    cl c;
+    int size = sizeof(c);
+    ifstream file(file_name, ios::binary);
+    file.seekg(0, ios::end);
+    int file_size = file.tellg();
+    return file_size / size;
+}
+
 void show_res(const string& file_name, int num_of_calls) {
     cl c;
     ifstream file(file_name, ios::binary);
-    for (int i = 0; i < num_of_calls; i++)
+    int n = num_of_structs(file_name);
+    for (int i = 0; i < n; i++)
     {
         file.read((char*)&c, sizeof(cl));
         cout << "\nPhone number: +380" << c.tel_number << endl;
@@ -51,7 +61,7 @@ void delete_cols(const string& file_name_1, const string& file_name_2, int& num_
     ofstream file2(file_name_2, ios::binary);
     vector<cl> cls;
     cl c;
-    int count = 0, iter = num_of_calls;
+    int count = 0, iter = num_of_structs(file_name_1);
 
     for (int i = 0; i < iter; i++)
     {
@@ -82,10 +92,16 @@ void delete_cols(const string& file_name_1, const string& file_name_2, int& num_
     }
 }
 
-void create_list(string file_name, int& num_of_calls) {
+void create_list(string file_name, int& num_of_calls, string file_mode) {
 
     vector<cl> calls;
-    ofstream file(file_name, ios::binary);
+    ofstream file;
+    if (file_mode == "r") {
+        file.open(file_name, ios::binary);
+    }
+    else if (file_mode == "a") {
+        file.open(file_name, ios::binary | ios::app);
+    }    
     string buf = "y";
     bool is_ok = true;
 

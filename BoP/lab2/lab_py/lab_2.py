@@ -9,14 +9,21 @@ class Call:
         self.price = price
 
 
+def read_from_pickle():
+    with open('calls.txt', 'rb') as file:
+        try:
+            while True:
+                yield pickle.load(file)
+        except EOFError:
+            pass
+
+
 def show_res():
     print('{:15}\t{:12}\t{:10}\t{:10}\t'.format('Phone number:', 'Call start:', 'Call end:', 'Price for call:'))
-    with open('calls.txt', 'rb') as file:
-        bin_data = file.read()
-        clients = pickle.loads(bin_data)['calls']
-        for client in clients:
-            print('{:15}\t{:12}\t{:10}\t{:<10}\t'
-                  .format(f'0{client.tel_number}', client.start_time, client.end_time, client.price))
+    for call in read_from_pickle():
+        for i in range(len(call)):
+            print('0{:15}\t{:12}\t{:10}\t{:10}\t'
+                  .format(call[i].tel_number, call[i].start_time, call[i].end_time, call[i].price))
 
 
 def price_for_call(start, end, price_day, price_night):
@@ -32,8 +39,10 @@ def price_for_call(start, end, price_day, price_night):
 
 def delete_cols():
     with open('calls.txt', 'rb') as file:
-        bin_data = file.read()
-        calls = pickle.loads(bin_data)['calls']
+        calls = []
+        for call in read_from_pickle():
+            for i in range(len(call)):
+                calls.append(call[i])
         buff = calls[::]
         for i in range(len(calls)):
             temp = [calls[i].start_time.split(':'), calls[i].end_time.split(':')]
@@ -44,38 +53,46 @@ def delete_cols():
                 buff.pop(i)
 
     with open('calls.txt', 'wb') as file:
-        pickle.dump({'calls': buff}, file)
+        pickle.dump(buff, file)
 
 
-def create_list():
+def create_list(choice):
     calls = []
-    with open('calls.txt', 'wb') as file:
-        buf = 'y'
-        count = 1
-        while buf == 'y':
-            is_ok = True
-            print(f'Client {count}')
-            print('Telephone number: +380', end='')
-            tel_number = input()
-            print('Start time (HH:MM): ', end='')
-            start_time = input()
-            print('End time (HH:MM): ', end='')
-            end_time = input()
-            price = price_for_call(start_time, end_time, 1.5, 0.9)
-            c = Call(tel_number, start_time, end_time, price)
-            if price <= 0:
-                is_ok = False
-                print('Mismatch in time')
-            if is_ok:
-                calls.append(c)
-            print('Add another client? (y/n)')
-            buf = input()
-            count += 1
-        pickle.dump({'calls': calls}, file)
+
+    buf = 'y'
+    count = 1
+    while buf == 'y':
+        is_ok = True
+        print(f'Client {count}')
+        print('Telephone number: +380', end='')
+        tel_number = input()
+        print('Start time (HH:MM): ', end='')
+        start_time = input()
+        print('End time (HH:MM): ', end='')
+        end_time = input()
+        price = price_for_call(start_time, end_time, 1.5, 0.9)
+        c = Call(tel_number, start_time, end_time, price)
+        if price <= 0:
+            is_ok = False
+            print('Mismatch in time')
+        if is_ok:
+            calls.append(c)
+        print('Add another client? (y/n)')
+        buf = input()
+        count += 1
+    with open('calls.txt', choice + 'b') as file:
+        pickle.dump(calls, file)
 
 
 if __name__ == '__main__':
-    create_list()
+    choice = input("Do you want to add text or rewrite file? "
+                   "(Enter 'a' if you want to add text; 'r' if you want to rewrite text): ")
+    if choice == 'a':
+        pass
+    elif choice == 'r':
+        choice = 'w'
+
+    create_list(choice)
     print('Data before deleting:')
     show_res()
     print('\nData after deleting:')

@@ -1,3 +1,4 @@
 ﻿  Source.cpp
-C:\Users\38097\Desktop\Second semester\BoP\lab2\lab_cpp\lab_2\lab_2\Source.cpp(78,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\38097\Desktop\Second semester\BoP\lab2\lab_cpp\lab_2\lab_2\Source.cpp(19,19): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\38097\Desktop\Second semester\BoP\lab2\lab_cpp\lab_2\lab_2\Source.cpp(88,23): warning C4018: '<': signed/unsigned mismatch
   lab_2.vcxproj -> C:\Users\38097\Desktop\Second semester\BoP\lab2\lab_cpp\lab_2\Debug\lab_2.exe
