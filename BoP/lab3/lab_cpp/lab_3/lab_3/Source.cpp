@@ -2,18 +2,18 @@
 
 void create(int n) {
 	int x, y, z, rad;	
-	vector <Sphere>v1(n);
+	vector <Sphere>v1;
 	for (int i = 0; i < n; i++) {
 		cout << "Enter x,y,z of center of sphere and it's radius: " << endl;
 		cout << "x="; cin >> x;
 		cout << "y="; cin >> y;
 		cout << "z="; cin >> z;
 		cout << "rad="; cin >> rad;
-		v1[i].setdata(x, y, z, rad);
+		v1.push_back(Sphere(x, y, z, rad));
 	}
 	cout << endl << "Spheres are: ";
 	for (int i = 0; i < n; i++) {
-		v1[i].printsp();
+		v1[i].printsp(i + 1);
 	}
 	belong(v1, n);
 }

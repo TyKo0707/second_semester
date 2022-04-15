@@ -5,11 +5,9 @@ using namespace std;
 class Sphere {
 	int x, y, z, rad;
 public:
-	void setdata(int xx, int yy, int zz, int radius) {
-		x = xx; y = yy; z = zz; rad = radius;
-	}
+	Sphere(int x, int y, int z, int rad);
 	int pointsp(int a, int b, int c);
-	void printsp() {
-		cout << endl << "Sphere center is: (" << x << ";" << y << ";" << z << ") \nRadius: " << rad;
+	void printsp(int n) {
+		cout << endl << "Center of sphere with number " << n <<" is: (" << x << "; " << y << "; " << z << ") \nRadius : " << rad;
 	}
 };

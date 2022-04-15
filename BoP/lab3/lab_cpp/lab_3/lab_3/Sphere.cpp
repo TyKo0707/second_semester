@@ -9,3 +9,10 @@ int Sphere::pointsp(int a, int b, int c) {
 		return 0;
 	}
 }
+
+Sphere::Sphere(int x, int y, int z, int rad) {
+	this->x = x;
+	this->y = y;
+	this->z = z;
+	this->rad = rad;
+}
