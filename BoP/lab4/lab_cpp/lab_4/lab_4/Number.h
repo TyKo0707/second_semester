@@ -13,7 +13,7 @@ private:
 	friend int vectorToNum(Number& num);
 
 public: 
-	Number(void);
+	Number();
 	Number(int num);
 	Number(vector<int>);
 	Number(const Number& num);

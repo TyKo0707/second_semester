@@ -72,9 +72,9 @@ Number Number::operator+(Number &obj) {
 	for (int i = obj.numByDigit.size() - 1; i >= 0; i--)
 	{
 		numByDigit[i + diff] += obj.numByDigit[i];
-		if (numByDigit[i + diff] == 10) {
+		if (numByDigit[i + diff] >= 10) {
 			numByDigit[i + diff - 1] += 1;
-			numByDigit[i + diff] = 0;
+			numByDigit[i + diff] = numByDigit[i + diff] - 10;
 		}
 	}
 
