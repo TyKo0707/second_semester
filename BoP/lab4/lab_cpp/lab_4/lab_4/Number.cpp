@@ -5,20 +5,11 @@ Number::Number(void) {
 	this-> numByDigit = getNumVector(0);
 }
 
-Number::Number(int num) {
-	this->numByDigit = getNumVector(num);
+Number::Number(string str) {
+	char strChr[] = str;
+
 }
 
-Number::Number(vector<int> v) {
-	for (int i = 0; i < v.size(); i++)
-	{
-		this->numByDigit.push_back(v[i]);
-	}	
-}
-
-Number::Number(const Number& obj) {
-	this->numByDigit = obj.numByDigit;
-}
 
 vector<int> Number::getNumVector(int number) {
 
@@ -37,32 +28,12 @@ void Number::setNum(int number) {
 	this->numByDigit = getNumVector(number);
 }
 
-void Number::outputDigits() {
+void Number::outputFraction() {
 	for (int i = 0; i < this->numByDigit.size(); i++)
 	{
 		cout << "10 ^ " << this->numByDigit.size() - i - 1 << ": " << this->numByDigit[i] << endl;
 	}
 	cout << "Full number: " << to_string(vectorToNum(*this)) << endl << endl;
-}
-
-Number Number::operator++()
-{
-	for (int i = 0; i < numByDigit.size(); i++)
-	{
-		numByDigit[i]++;
-	}
-
-	return *this;
-}
-
-Number Number::operator--()
-{
-	for (int i = 0; i < numByDigit.size(); i++)
-	{
-		numByDigit[i]--;
-	}
-
-	return *this;
 }
 
 Number Number::operator+(Number &obj) {

@@ -1,34 +1,28 @@
+//Спроектувати клас для представлення неправильного дробу, що задається мішаним числом: 
+//ціла частина, чисельник дробової частини, знаменник дробової частини.
+//Клас повинен мати конструктор з параметром, яким є рядок виду “ціла_частина чисельник_дробової_частини / знаменник_дробової_частини”(наприклад, «3 2 / 5»), 
+//можливо інші конструктори, метод виведення об'єкта-дробу, можливо інші методи введення/виведення, методи для виконання поставлених завдань. 
+//Розробити програму, яка створює два неправильних дроби і знаходить їх суму (з використанням перевантаженого оператора «+»). 
+//Програма повинна забезпечувати наочне виведення усіх вхідних, вихідних та проміжних даних 
+//(з використанням перевантаженого стандартного оператора потокового виведення «<<»).
+
 #include "Number.h"
 #include <iostream>
 
 int main() {
 
-	vector<int> vect{ 2,4,6,9,1 };
-	Number a(12345), b(a), c, d(vect);
+	Number a("3 2 / 5");
+	Number b("4 3 / 5");
 
-	cout << "First vector befor ++: " << endl;
-	a.outputDigits();
+	Number c = a + b;
 
-	cout << "Second vector befor --: " << endl;
-	b.outputDigits();
+	cout << "First num: " << endl;
+	a.outputFraction();
 
-	cout << "First vector after ++: " << endl;
-	++a;
-	a.outputDigits();
+	cout << "Second num: " << endl;
+	b.outputFraction();
 
-	cout << "Second vector after --: " << endl;
-	--b;
-	b.outputDigits();
-
-	cout << "Third vector (sum of f and s vectors): " << endl;
-	c = a + b;
-	c.outputDigits();
-
-	cout << "Fourth vector: " << endl;
-	d = d > c;
-	d.outputDigits();
-
-	cout << "Deciding which number is bigger (t and f vectors): " << endl;
-	d.outputDigits();
+	cout << "Nums after +: " << endl;
+	c.outputFraction();
 
 }

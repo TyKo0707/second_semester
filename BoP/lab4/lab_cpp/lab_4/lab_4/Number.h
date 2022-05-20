@@ -14,14 +14,10 @@ private:
 
 public: 
 	Number();
-	Number(int num);
-	Number(vector<int>);
-	Number(const Number& num);
-	Number operator++();
-	Number operator--();
+	Number(string str);
 	Number operator+(Number& obj);
 	Number operator>(Number& obj);
 	void setNum(int number);
-	void outputDigits();
+	void outputFraction();
 	
 };
